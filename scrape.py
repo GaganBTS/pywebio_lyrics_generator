@@ -1,4 +1,4 @@
-driver_path = r"C:\Users\gsing\PycharmProjects\chromedriver.exe"
+driver_path = r"chromedriver.exe"
 import selenium
 import time
 from selenium.webdriver.common.keys import Keys
