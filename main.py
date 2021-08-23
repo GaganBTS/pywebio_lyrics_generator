@@ -22,4 +22,7 @@ def lyrics():
         put_error('Please do not leave any field empty')
 
 if __name__ == '__main__':
- lyrics()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-p","--port",type=int,default=7700)
+    args =parser.parse_args()
+    pywebio.start_server(lyrics,port=args.port)
