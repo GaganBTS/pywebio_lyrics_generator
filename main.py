@@ -1,4 +1,13 @@
-driver_path = "chromedriver"
+
+desired_cap = {
+ 'os_version': '10',
+ 'resolution': '1920x1080',
+ 'browser': 'Chrome',
+ 'browser_version': 'latest',
+ 'os': 'Windows',
+ 'name': 'BStack-[Python] Sample Test', # test name
+ 'build': 'BStack Build Number 1' # CI/CD job or build name
+}
 import argparse
 import pywebio
 from pywebio.input import input, FLOAT,TEXT
@@ -18,7 +27,8 @@ class Lyrics_Scraping:
         self.url = 'https://www.google.com'
         self.option = Options()
         self.option.add_argument('--headless')
-        self.driver = webdriver.Chrome(executable_path=driver_path,options=self.option)
+        self.driver = webdriver.Remote(command_executor='https://gagandeepsingh_9ELPDQ:FTbd5x26kUcFZXfpZ5bb@hub-cloud.browserstack.com/wd/hub',
+                                       desired_capabilities=desired_cap)
 
         self.driver.get(self.url)
         self.search = self.driver.find_element_by_class_name('gLFyf')
@@ -63,3 +73,4 @@ if __name__ == '__main__':
     parser.add_argument("-p","--port",type=int,default=7700)
     args =parser.parse_args()
     pywebio.start_server(lyrics,port=args.port)
+
