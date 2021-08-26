@@ -1,4 +1,4 @@
-driver_path = r"chromedriver.exe"
+driver_path = "chromedriver"
 import argparse
 import pywebio
 from pywebio.input import input, FLOAT,TEXT
