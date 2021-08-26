@@ -27,7 +27,7 @@ class Lyrics_Scraping:
         self.url = 'https://www.google.com'
         self.option = Options()
         self.option.add_argument('--headless')
-        self.driver = webdriver.Remote(command_executor='https://gagandeepsingh_9ELPDQ:FTbd5x26kUcFZXfpZ5bb@hub-cloud.browserstack.com/wd/hub',
+        self.driver = webdriver.Remote(command_executor='https://name:key@hub-cloud.browserstack.com/wd/hub',
                                        desired_capabilities=desired_cap)
 
         self.driver.get(self.url)
