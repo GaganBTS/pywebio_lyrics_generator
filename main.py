@@ -27,7 +27,7 @@ class Lyrics_Scraping:
         self.url = 'https://www.google.com'
         self.option = Options()
         self.option.add_argument('--headless')
-        self.driver = webdriver.Remote(command_executor='https://name:key@hub-cloud.browserstack.com/wd/hub',
+        self.driver = webdriver.Remote(command_executor='https://gagandeepsingh_9ELPDQ:FTbd5x26kUcFZXfpZ5bb@hub-cloud.browserstack.com/wd/hub',
                                        desired_capabilities=desired_cap)
 
         self.driver.get(self.url)
@@ -61,7 +61,7 @@ def lyrics():
       if len(full_lyrics) != 0:
 
        put_html(f'<h2 style="text-align:center">{song.title()} by {artist.title()} Lyrics</h2>')
-       for l in full_lyrics[3:]:
+       for l in full_lyrics:
         put_html(f"<h3 style='text-align:center; color:#511281'>{l}\n</h3>")
       else:
          put_error('Please enter the details correctly. Cannot find the lyrics of entered song')
